@@ -1,5 +1,13 @@
 
 const gameboard = (function() {
+    const boardContainer = document.querySelector(".gameboard")
+    
+    // create a factory function that creates players
+    const playerFactory = (name, playerChoice) => {
+        
+        return {name, playerChoice}
+    }
+    
     
     let elsArray = []; 
     // create DOM els
@@ -8,73 +16,29 @@ const gameboard = (function() {
         el.classList.add('squareEl');
         el.style.width = '5.6rem'
         el.style.height = '5.6rem'
+        el.style.textAlign = 'center'
+        el.style.fontSize = '4.9rem'
         elsArray.push(el);
-        render()
+        el.id = elsArray.indexOf(el);
     }
+    console.log(elsArray)
+    render()
     
-    
+    const harry = playerFactory('harry', "X")
+    const jen = playerFactory('jen', 'O')
     
     function render() {
-        const boardContainer = document.querySelector(".gameboard")
         for(const item of elsArray) {
-        boardContainer.appendChild(item)
+            boardContainer.appendChild(item)
     }}
-    
-    
-    
-    
-    
-    
-    
-    
+
+    function addPlayerChoice(e) {
+        if(!e.target.classList.contains('squareEl')) {
+            return;
+        }    
+        e.target.innerText = jen.playerChoice
+    }
+
+    boardContainer.addEventListener('click', addPlayerChoice)
+       
 })()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let gameboard = {
-//     init: function() {
-//         this.cacheDom()
-//         this.render()
-
-//         },
-//         cacheDom: function() {
-//             this.squareEls =
-//             function() {
-//                     let elsArray = []; 
-//                     for(i = 0; i < 9; i++) {
-//                     let el = document.createElement('div');
-//                     el.classList.add('squareEl');
-//                     el.style.width = '3rem'
-                    
-//                     elsArray.push(el);
-//                 }
-//                 return elsArray;
-//             }
-            
-//         },
-//         render: function() {
-//             this.boardWrapperEl = document.getElementsByClassName('gameboard-wrapper')
-//             this.squareEls = document.getElementsByClassName('squareEl');
-//         }
-        
-//     };
-    
-//     gameboard.init();
