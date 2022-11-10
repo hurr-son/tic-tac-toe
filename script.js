@@ -23,7 +23,6 @@ const gameboard = (function() {
     }
     console.log(elsArray)
     render()
-    
     const harry = playerFactory('harry', "X")
     const jen = playerFactory('jen', 'O')
     
