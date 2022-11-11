@@ -29,31 +29,82 @@ const gameboard = (function() {
     function render() {
         for(const item of elsArray) {
             boardContainer.appendChild(item)
-    }}
-
-    function addPlayerChoice(e) {
-        if(!e.target.classList.contains('squareEl')) {
+        }}
+        
+        function addPlayerChoice(e) {
+            if(!e.target.classList.contains('squareEl')) {
             return;
         }    
-        e.target.innerText = jen.playerChoice
-    }
+        if(e.target.innerText === '') {
+            e.target.innerText = harry.playerChoice
+            
+            if(
+              (((elsArray[0].innerText === 'O') &&
+                (elsArray[1].innerText === 'O') &&
+                (elsArray[2].innerText === 'O')) ||
+               ((elsArray[0].innerText === 'X') &&
+                (elsArray[1].innerText === 'X') &&
+                (elsArray[2].innerText === 'X'))) ||
 
+              (((elsArray[3].innerText === 'O') &&
+                (elsArray[4].innerText === 'O') &&
+                (elsArray[5].innerText === 'O')) ||
+               ((elsArray[3].innerText === 'X') &&
+                (elsArray[4].innerText === 'X') &&
+                (elsArray[5].innerText === 'X'))) ||
+
+              (((elsArray[6].innerText === 'O') &&
+                (elsArray[7].innerText === 'O') &&
+                (elsArray[8].innerText === 'O')) ||
+               ((elsArray[6].innerText === 'X') &&
+                (elsArray[7].innerText === 'X') &&
+                (elsArray[8].innerText === 'X'))) ||
+
+              (((elsArray[0].innerText === 'O') &&
+                (elsArray[3].innerText === 'O') &&
+                (elsArray[6].innerText === 'O')) ||
+               ((elsArray[0].innerText === 'X') &&
+                (elsArray[3].innerText === 'X') &&
+                (elsArray[6].innerText === 'X'))) ||
+
+              (((elsArray[1].innerText === 'O') &&
+                (elsArray[4].innerText === 'O') &&
+                (elsArray[7].innerText === 'O')) ||
+               ((elsArray[1].innerText === 'X') &&
+                (elsArray[4].innerText === 'X') &&
+                (elsArray[7].innerText === 'X'))) ||
+
+              (((elsArray[2].innerText === 'O') &&
+                (elsArray[5].innerText === 'O') &&
+                (elsArray[8].innerText === 'O')) ||
+               ((elsArray[2].innerText === 'X') &&
+                (elsArray[5].innerText === 'X') &&
+                (elsArray[8].innerText === 'X'))) ||
+
+              (((elsArray[0].innerText === 'O') &&
+                (elsArray[4].innerText === 'O') &&
+                (elsArray[8].innerText === 'O')) ||
+               ((elsArray[0].innerText === 'X') &&
+                (elsArray[4].innerText === 'X') &&
+                (elsArray[8].innerText === 'X'))) ||
+
+              (((elsArray[2].innerText === 'O') &&
+                (elsArray[4].innerText === 'O') &&
+                (elsArray[6].innerText === 'O')) ||
+               ((elsArray[2].innerText === 'X') &&
+                (elsArray[4].innerText === 'X') &&
+                (elsArray[6].innerText === 'X')))
+
+    
+                )
+                
+                
+                {console.log('You Won!!!')}
+        }
+        
+    }
+    
     boardContainer.addEventListener('click', addPlayerChoice)
        
 })()
 
-// wins =
-
-// Rows
-// [0,1,2]
-// [3,4,5]
-// [6,7,8]
-
-// Columns
-// [0,3,6]
-// [1,4,7]
-// [2,5,8]
-
-// Diagonal
-// [0,4,8]
-// [2,4,6]
