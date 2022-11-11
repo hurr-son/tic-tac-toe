@@ -12,3 +12,8 @@
 .squareEl {
     border: 1px black solid;
 }
+
+.reset {
+    padding: .5rem 2rem;
+    font-size: 1.5rem;
+}
