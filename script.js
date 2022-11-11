@@ -1,7 +1,7 @@
 
 const gameboard = (function() {
     const boardContainer = document.querySelector(".gameboard")
-    
+    const resetBtn = document.querySelector(".reset");
     // create a factory function that creates players
     const playerFactory = (name, playerChoice) => {
         
@@ -31,80 +31,106 @@ const gameboard = (function() {
             boardContainer.appendChild(item)
         }}
         
+        
         function addPlayerChoice(e) {
             if(!e.target.classList.contains('squareEl')) {
             return;
         }    
-        if(e.target.innerText === '') {
-            e.target.innerText = harry.playerChoice
+              if(e.target.innerText === '') {
+              e.target.innerText = harry.playerChoice
+
+                if((((elsArray[0].innerText === 'O') &&
+                     (elsArray[1].innerText === 'O') &&
+                     (elsArray[2].innerText === 'O')) ||
+                    ((elsArray[0].innerText === 'X') &&
+                     (elsArray[1].innerText === 'X') &&
+                     (elsArray[2].innerText === 'X'))) ||
+
+                   (((elsArray[3].innerText === 'O') &&
+                     (elsArray[4].innerText === 'O') &&
+                     (elsArray[5].innerText === 'O')) ||
+                    ((elsArray[3].innerText === 'X') &&
+                     (elsArray[4].innerText === 'X') &&
+                     (elsArray[5].innerText === 'X'))) ||
+
+                   (((elsArray[6].innerText === 'O') &&
+                     (elsArray[7].innerText === 'O') &&
+                     (elsArray[8].innerText === 'O')) ||
+                    ((elsArray[6].innerText === 'X') &&
+                     (elsArray[7].innerText === 'X') &&
+                     (elsArray[8].innerText === 'X'))) ||
+
+                   (((elsArray[0].innerText === 'O') &&
+                     (elsArray[3].innerText === 'O') &&
+                     (elsArray[6].innerText === 'O')) ||
+                    ((elsArray[0].innerText === 'X') &&
+                     (elsArray[3].innerText === 'X') &&
+                     (elsArray[6].innerText === 'X'))) ||
+
+                   (((elsArray[1].innerText === 'O') &&
+                     (elsArray[4].innerText === 'O') &&
+                     (elsArray[7].innerText === 'O')) ||
+                     ((elsArray[1].innerText === 'X') &&
+                     (elsArray[4].innerText === 'X') &&
+                     (elsArray[7].innerText === 'X'))) ||
+                     
+                     (((elsArray[2].innerText === 'O') &&
+                     (elsArray[5].innerText === 'O') &&
+                     (elsArray[8].innerText === 'O')) ||
+                     ((elsArray[2].innerText === 'X') &&
+                     (elsArray[5].innerText === 'X') &&
+                     (elsArray[8].innerText === 'X'))) ||
+                     
+                     (((elsArray[0].innerText === 'O') &&
+                     (elsArray[4].innerText === 'O') &&
+                     (elsArray[8].innerText === 'O')) ||
+                     ((elsArray[0].innerText === 'X') &&
+                     (elsArray[4].innerText === 'X') &&
+                     (elsArray[8].innerText === 'X'))) ||
+                     
+                     (((elsArray[2].innerText === 'O') &&
+                     (elsArray[4].innerText === 'O') &&
+                     (elsArray[6].innerText === 'O')) ||
+                     ((elsArray[2].innerText === 'X') &&
+                     (elsArray[4].innerText === 'X') &&
+                     (elsArray[6].innerText === 'X'))))
+                     
+                     {console.log('You Won!!!')}
+                     
+                  if((elsArray[0].innerText !== '') && 
+                     (elsArray[1].innerText !== '') &&
+                     (elsArray[2].innerText !== '') &&
+                     (elsArray[3].innerText !== '') &&
+                     (elsArray[4].innerText !== '') &&
+                     (elsArray[5].innerText !== '') &&
+                     (elsArray[6].innerText !== '') &&
+                     (elsArray[7].innerText !== '') &&
+                     (elsArray[8].innerText !== '')) 
+                     {console.log('Tied!')
+                      
+                     
+                    }       
+                }
+                
+            }       
             
-            if(
-              (((elsArray[0].innerText === 'O') &&
-                (elsArray[1].innerText === 'O') &&
-                (elsArray[2].innerText === 'O')) ||
-               ((elsArray[0].innerText === 'X') &&
-                (elsArray[1].innerText === 'X') &&
-                (elsArray[2].innerText === 'X'))) ||
-
-              (((elsArray[3].innerText === 'O') &&
-                (elsArray[4].innerText === 'O') &&
-                (elsArray[5].innerText === 'O')) ||
-               ((elsArray[3].innerText === 'X') &&
-                (elsArray[4].innerText === 'X') &&
-                (elsArray[5].innerText === 'X'))) ||
-
-              (((elsArray[6].innerText === 'O') &&
-                (elsArray[7].innerText === 'O') &&
-                (elsArray[8].innerText === 'O')) ||
-               ((elsArray[6].innerText === 'X') &&
-                (elsArray[7].innerText === 'X') &&
-                (elsArray[8].innerText === 'X'))) ||
-
-              (((elsArray[0].innerText === 'O') &&
-                (elsArray[3].innerText === 'O') &&
-                (elsArray[6].innerText === 'O')) ||
-               ((elsArray[0].innerText === 'X') &&
-                (elsArray[3].innerText === 'X') &&
-                (elsArray[6].innerText === 'X'))) ||
-
-              (((elsArray[1].innerText === 'O') &&
-                (elsArray[4].innerText === 'O') &&
-                (elsArray[7].innerText === 'O')) ||
-               ((elsArray[1].innerText === 'X') &&
-                (elsArray[4].innerText === 'X') &&
-                (elsArray[7].innerText === 'X'))) ||
-
-              (((elsArray[2].innerText === 'O') &&
-                (elsArray[5].innerText === 'O') &&
-                (elsArray[8].innerText === 'O')) ||
-               ((elsArray[2].innerText === 'X') &&
-                (elsArray[5].innerText === 'X') &&
-                (elsArray[8].innerText === 'X'))) ||
-
-              (((elsArray[0].innerText === 'O') &&
-                (elsArray[4].innerText === 'O') &&
-                (elsArray[8].innerText === 'O')) ||
-               ((elsArray[0].innerText === 'X') &&
-                (elsArray[4].innerText === 'X') &&
-                (elsArray[8].innerText === 'X'))) ||
-
-              (((elsArray[2].innerText === 'O') &&
-                (elsArray[4].innerText === 'O') &&
-                (elsArray[6].innerText === 'O')) ||
-               ((elsArray[2].innerText === 'X') &&
-                (elsArray[4].innerText === 'X') &&
-                (elsArray[6].innerText === 'X')))
-
+            function reset() {
+                elsArray[0].innerText = ''
+                elsArray[1].innerText = ''
+                elsArray[2].innerText = ''
+                elsArray[3].innerText = ''
+                elsArray[4].innerText = ''
+                elsArray[5].innerText = ''
+                elsArray[6].innerText = ''
+                elsArray[7].innerText = ''
+                elsArray[8].innerText = ''
+            }
+            
+            
+            boardContainer.addEventListener('click', addPlayerChoice)
+            resetBtn.addEventListener('click', reset)
     
-                )
-                
-                
-                {console.log('You Won!!!')}
-        }
-        
-    }
-    
-    boardContainer.addEventListener('click', addPlayerChoice)
-       
+    return {reset}        
+
 })()
 
