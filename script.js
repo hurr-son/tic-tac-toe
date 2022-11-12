@@ -132,7 +132,7 @@ const game = (function() {
                      (elsArray[6].innerText !== '') &&
                      (elsArray[7].innerText !== '') &&
                      (elsArray[8].innerText !== '')) 
-                     {console.log('Tied!')}       
+                     {display.innerHTML = 'Tied!'}       
                     }
                     
                 }       
@@ -144,6 +144,7 @@ const game = (function() {
     }
     
     function reset() {
+                roundOver = false
                 display.innerHTML = ''
                 elsArray[0].innerText = ''
                 elsArray[1].innerText = ''
