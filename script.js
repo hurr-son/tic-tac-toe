@@ -11,6 +11,7 @@ const game = (function() {
     const xplayerScore = document.querySelector('.xplayer-display');
     const oplayerScore = document.querySelector('.oplayer-display');
     let turn = true
+    let roundOver = false
     let xPlayer
     let oPlayer
     let xScore = 0
@@ -47,7 +48,7 @@ const game = (function() {
         
         function startGame(e) {
             
-            if(!e.target.classList.contains('squareEl')) {
+            if(!e.target.classList.contains('squareEl') || (roundOver === true)) {
                 return;
             }    
             if(e.target.innerText === '') {
@@ -86,6 +87,7 @@ const game = (function() {
                      xScore += 1
                      updateScore()
                      turn === false
+                     roundOver = true
                     }
                 
                 if(((elsArray[0].innerText === 'O') &&
@@ -116,6 +118,7 @@ const game = (function() {
                      oScore += 1
                      updateScore()
                      turn === false
+                     roundOver === true
                     }
                 
                 
