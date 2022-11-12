@@ -83,7 +83,7 @@ const game = (function() {
                     (elsArray[4].innerText === 'X') &&
                     (elsArray[6].innerText === 'X')))
                     {display.innerHTML = `${xPlayer.name} won!`
-                     xScore =+ 1
+                     xScore += 1
                      updateScore()
                      turn === false
                     }
