@@ -1,5 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(228, 249, 245);
+}
+
 main {
     font-size: 2rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(1rem, 5rem, 10rem);
+    gap: 40rem;
+}
+
+.xplayer-wrapper,
+.oplayer-wrapper {
+    text-align: center;
 }
 
 .gameboard {
@@ -7,18 +41,89 @@ main {
     align-items: center;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    border: 2px black solid;
-    width: 18rem;
-    height: 18rem;
+   
+    width: 22rem;
+    height: 22rem;
 }
+
+.button-wrapper {
+    display: flex;
+    padding-top: 5rem;
+    gap: 3rem;
+}
+
+form {
+    display: flex;
+    padding-top: 4rem;
+    gap: 2rem;
+}
+
+.xplayer,
+.oplayer {
+    display: flex;
+    gap: 1rem;
+    
+}
+
+input[type=text] {
+    font-size: 1.2rem;
+}
+
+
+
+
 
 
 .squareEl {
-    border: 1px black solid;
+    border: .2rem rgb(64, 81, 78) solid;
+    text-shadow: 1px 1px 2px rgb(64, 81, 78);
+    color: rgb(17, 153, 158);
 }
+.squareEl:nth-child(1) {
+    border-left: hidden;
+    border-top: hidden;
+}
+
+.squareEl:nth-child(2) {
+    border-top: hidden;
+}
+.squareEl:nth-child(3) {
+    border-right: hidden;
+    border-top: hidden;
+}
+.squareEl:nth-child(4) {
+    border-left: hidden;
+}
+.squareEl:nth-child(6) {
+    border-right: hidden;
+}
+.squareEl:nth-child(7) {
+    border-left: hidden;
+    border-bottom: hidden;
+}
+.squareEl:nth-child(8) {
+    border-bottom: hidden;
+}
+.squareEl:nth-child(9) {
+    border-right: hidden;
+    border-bottom: hidden;
+}
+
 
 button {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(48, 227, 202, .1);
     padding: .5rem 2rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;  
 }
 
+button:hover {
+    background-color: rgba(48, 227, 202, .3);
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+}
