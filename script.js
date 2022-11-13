@@ -4,6 +4,7 @@ const game = (function() {
     const XPlayerInput = document.querySelector("#xplayer");
     const OPlayerInput = document.querySelector("#oplayer");
     const startBtn = document.querySelector(".start");
+    const clearBtn = document.querySelector(".clear");
     const resetBtn = document.querySelector(".reset");
     const display = document.querySelector('.display');
     const xplayerTitle = document.querySelector('.xplayer-score');
@@ -16,7 +17,6 @@ const game = (function() {
     let oPlayer
     let xScore = 0
     let oScore = 0
-
     
     // create a factory function that creates players
     const playerFactory = (name, playerChoice) => {    
@@ -30,10 +30,10 @@ const game = (function() {
     for(i = 0; i < 9; i++) {
         let el = document.createElement('div');
         el.classList.add('squareEl');
-        el.style.width = '5.6rem'
-        el.style.height = '5.6rem'
+        el.style.width = '7.2rem'
+        el.style.height = '7.2rem'
         el.style.textAlign = 'center'
-        el.style.fontSize = '4.9rem'
+        el.style.fontSize = '6.5rem'
         elsArray.push(el);
         el.id = elsArray.indexOf(el);
     }
@@ -60,128 +60,141 @@ const game = (function() {
                 turn = !turn
                 
                 if(((elsArray[0].innerText === 'X') &&
-                    (elsArray[1].innerText === 'X') &&
-                    (elsArray[2].innerText === 'X')) ||
-                   ((elsArray[3].innerText === 'X') &&
-                    (elsArray[4].innerText === 'X') &&
-                    (elsArray[5].innerText === 'X')) ||
-                   ((elsArray[6].innerText === 'X') &&
-                    (elsArray[7].innerText === 'X') &&
-                    (elsArray[8].innerText === 'X')) ||
-                   ((elsArray[0].innerText === 'X') &&
-                    (elsArray[3].innerText === 'X') &&
-                    (elsArray[6].innerText === 'X')) ||
-                   ((elsArray[1].innerText === 'X') &&
-                    (elsArray[4].innerText === 'X') &&
-                    (elsArray[7].innerText === 'X')) ||
-                   ((elsArray[2].innerText === 'X') &&
-                    (elsArray[5].innerText === 'X') &&
-                    (elsArray[8].innerText === 'X')) ||
-                   ((elsArray[0].innerText === 'X') &&
-                    (elsArray[4].innerText === 'X') &&
-                    (elsArray[8].innerText === 'X')) ||
-                   ((elsArray[2].innerText === 'X') &&
-                    (elsArray[4].innerText === 'X') &&
-                    (elsArray[6].innerText === 'X')))
-                    {display.innerHTML = `${xPlayer.name} won!`
-                     xScore += 1
-                     updateScore()
-                    //  turn = false
-                     roundOver = true
-                    }
-                
-                if(((elsArray[0].innerText === 'O') &&
-                    (elsArray[1].innerText === 'O') &&
-                    (elsArray[2].innerText === 'O')) ||
-                   ((elsArray[3].innerText === 'O') &&
+                (elsArray[1].innerText === 'X') &&
+                (elsArray[2].innerText === 'X')) ||
+                ((elsArray[3].innerText === 'X') &&
+                (elsArray[4].innerText === 'X') &&
+                (elsArray[5].innerText === 'X')) ||
+                ((elsArray[6].innerText === 'X') &&
+                (elsArray[7].innerText === 'X') &&
+                (elsArray[8].innerText === 'X')) ||
+                ((elsArray[0].innerText === 'X') &&
+                (elsArray[3].innerText === 'X') &&
+                (elsArray[6].innerText === 'X')) ||
+                ((elsArray[1].innerText === 'X') &&
+                (elsArray[4].innerText === 'X') &&
+                (elsArray[7].innerText === 'X')) ||
+                ((elsArray[2].innerText === 'X') &&
+                (elsArray[5].innerText === 'X') &&
+                (elsArray[8].innerText === 'X')) ||
+                ((elsArray[0].innerText === 'X') &&
+                (elsArray[4].innerText === 'X') &&
+                (elsArray[8].innerText === 'X')) ||
+                ((elsArray[2].innerText === 'X') &&
+                (elsArray[4].innerText === 'X') &&
+                (elsArray[6].innerText === 'X')))
+                {display.innerHTML = `${xPlayer.name} won!`
+                xScore += 1
+                updateScore()
+                roundOver = true
+            }
+            
+            if(((elsArray[0].innerText === 'O') &&
+            (elsArray[1].innerText === 'O') &&
+            (elsArray[2].innerText === 'O')) ||
+            ((elsArray[3].innerText === 'O') &&
                     (elsArray[4].innerText === 'O') &&
                     (elsArray[5].innerText === 'O')) ||
-                   ((elsArray[6].innerText === 'O') &&
+                    ((elsArray[6].innerText === 'O') &&
                     (elsArray[7].innerText === 'O') &&
                     (elsArray[8].innerText === 'O')) ||
-                   ((elsArray[0].innerText === 'O') &&
+                    ((elsArray[0].innerText === 'O') &&
                     (elsArray[3].innerText === 'O') &&
                     (elsArray[6].innerText === 'O')) ||
-                   ((elsArray[1].innerText === 'O') &&
+                    ((elsArray[1].innerText === 'O') &&
                     (elsArray[4].innerText === 'O') &&
                     (elsArray[7].innerText === 'O')) ||
-                   ((elsArray[2].innerText === 'O') &&
+                    ((elsArray[2].innerText === 'O') &&
                     (elsArray[5].innerText === 'O') &&
                     (elsArray[8].innerText === 'O')) ||
-                   ((elsArray[0].innerText === 'O') &&
+                    ((elsArray[0].innerText === 'O') &&
                     (elsArray[4].innerText === 'O') &&
                     (elsArray[8].innerText === 'O')) ||
-                   ((elsArray[2].innerText === 'O') &&
+                    ((elsArray[2].innerText === 'O') &&
                     (elsArray[4].innerText === 'O') &&
                     (elsArray[6].innerText === 'O')))
                     {display.innerHTML = `${oPlayer.name} won!`
-                     oScore += 1
-                     updateScore()
-                    //  turn = false
-                     roundOver = true
-                    }
+                    oScore += 1
+                    updateScore()
+                    roundOver = true
+                }
                 
                 
                 
-                  if((elsArray[0].innerText !== '') && 
-                     (elsArray[1].innerText !== '') &&
-                     (elsArray[2].innerText !== '') &&
-                     (elsArray[3].innerText !== '') &&
-                     (elsArray[4].innerText !== '') &&
-                     (elsArray[5].innerText !== '') &&
-                     (elsArray[6].innerText !== '') &&
-                     (elsArray[7].innerText !== '') &&
-                     (elsArray[8].innerText !== '')) 
-                     {display.innerHTML = 'Tied!'}       
-                    }
-                    
-                }       
-                
-                
-    function updateScore() {             
-                xplayerScore.innerHTML = xScore
-                oplayerScore.innerHTML = oScore
-    }
-    
-    function reset() {
-                roundOver = false
-                display.innerHTML = ''
-                elsArray[0].innerText = ''
-                elsArray[1].innerText = ''
-                elsArray[2].innerText = ''
-                elsArray[3].innerText = ''
-                elsArray[4].innerText = ''
-                elsArray[5].innerText = ''
-                elsArray[6].innerText = ''
-                elsArray[7].innerText = ''
-                elsArray[8].innerText = ''
-    }
+                if((elsArray[0].innerText !== '') && 
+                (elsArray[1].innerText !== '') &&
+                (elsArray[2].innerText !== '') &&
+                (elsArray[3].innerText !== '') &&
+                (elsArray[4].innerText !== '') &&
+                (elsArray[5].innerText !== '') &&
+                (elsArray[6].innerText !== '') &&
+                (elsArray[7].innerText !== '') &&
+                (elsArray[8].innerText !== '')) 
+                {display.innerHTML = 'Tied!'}       
+            }
             
-    boardContainer.addEventListener('click', startGame)
+        }       
+        
+        
+        function updateScore() {             
+            xplayerScore.innerHTML = xScore
+            oplayerScore.innerHTML = oScore
+        }
+        
+        function clear() {
+            roundOver = false
+            display.innerHTML = ''
+            elsArray[0].innerText = ''
+            elsArray[1].innerText = ''
+            elsArray[2].innerText = ''
+            elsArray[3].innerText = ''
+            elsArray[4].innerText = ''
+            elsArray[5].innerText = ''
+            elsArray[6].innerText = ''
+            elsArray[7].innerText = ''
+            elsArray[8].innerText = ''
+        }
+        
+        function reset() {
+            startBtn.disabled = false;
+            clear()
+            xplayerTitle.innerHTML = ''
+            oplayerTitle.innerHTML = ''
+            xplayerScore.innerHTML = ''
+            oplayerScore.innerHTML = ''
+            display.innerHTML = ''
+
+        }
+
+
+        boardContainer.addEventListener('click', startGame)
+        
+        startBtn.addEventListener('click', function(){
+            xPlayer = playerFactory(`${XPlayerInput.value}`, 'X');
+            oPlayer = playerFactory(`${OPlayerInput.value}`, 'O');
+            XPlayerInput.value = ''
+            OPlayerInput.value = ''
+            xplayerTitle.innerHTML = `${xPlayer.name}`
+            oplayerTitle.innerHTML = `${oPlayer.name}`
+            updateScore()
+            startBtn.disabled = true
+        })
+        
     
-    startBtn.addEventListener('click', function(){
-        xPlayer = playerFactory(`${XPlayerInput.value}`, 'X');
-        oPlayer = playerFactory(`${OPlayerInput.value}`, 'O');
-        XPlayerInput.value = ''
-        OPlayerInput.value = ''
-        xplayerTitle.innerHTML = `${xPlayer.name}`
-        oplayerTitle.innerHTML = `${oPlayer.name}`
-        updateScore()
-    })
+        clearBtn.addEventListener('click', clear)
+        
+        resetBtn.addEventListener('click', reset)
+        
+        return {clear, reset}
+        
+    })()
     
-    resetBtn.addEventListener('click', reset)
     
-       
-    return {reset}
     
-})()
-
-
-
-
-
-                
-                     
-                     
-
-                     
+    
+    
+    
+    
+    
+    
+    
