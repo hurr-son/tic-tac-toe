@@ -86,7 +86,7 @@ const game = (function() {
                     {display.innerHTML = `${xPlayer.name} won!`
                      xScore += 1
                      updateScore()
-                     turn = false
+                    //  turn = false
                      roundOver = true
                     }
                 
@@ -117,7 +117,7 @@ const game = (function() {
                     {display.innerHTML = `${oPlayer.name} won!`
                      oScore += 1
                      updateScore()
-                     turn = false
+                    //  turn = false
                      roundOver = true
                     }
                 
