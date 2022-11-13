@@ -6,4 +6,4 @@ The logic wasn't too terrible to figure out. I'm sure there is a better solution
 Feel free to try it out. 
 
 The X Player always goes first on the very first game. Starting player alternates from there. 
-
+[Try it out](https://hurr-son.github.io/tic-tac-toe/)
