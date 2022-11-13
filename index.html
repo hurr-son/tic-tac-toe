@@ -9,22 +9,38 @@
     <script defer src="script.js"></script>
 </head>
 <body>
+    <h1>Tic Tac Toe</h1>
     <main> 
+        <div class="container">
+        <div class="xplayer-wrapper">        
+            <div class="xplayer-score"></div>
+            <div class="xplayer-display"></div>
+        </div>
+        <div class="oplayer-wrapper">  
+            <div class="oplayer-score"></div>
+            <div class="oplayer-display"></div>
+        </div>
+        </div>
+        <div class="main-wrapper">
         <div class="gameboard"></div>
+        <div class="button-wrapper">    
+            <button class="start">Start</button>
+            <button class="clear">Clear</button>
+            <button class="reset">Reset</button>
+        </div>
         <form>
+            <div class="xplayer">
             <label for="xplayer">X Player</label>
             <input type="text" name="xplayer" id="xplayer">
+            </div>
+            <div class="oplayer">
             <label for="oplayer">O Player</label>
             <input type="text" name="oplayer" id="oplayer">
+            </div>
         </form>
-        <button class="start">Start</button>
-        <button class="reset">Reset</button>
+        </div>
+            
         <div class="display"></div>
-        <div class="xplayer-score"></div>
-        <div class="xplayer-display"></div>
-        <div class="oplayer-score"></div>
-        <div class="oplayer-display"></div>
-    
     </main>
 </body>
 </html>
