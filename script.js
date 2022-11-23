@@ -59,10 +59,10 @@ const game = (function() {
                 }
                 turn = !turn
                 
-                if(((elsArray[0].innerText === 'X') &&
+            if(((elsArray[0].innerText === 'X') &&
                 (elsArray[1].innerText === 'X') &&
                 (elsArray[2].innerText === 'X')) ||
-                ((elsArray[3].innerText === 'X') &&
+               ((elsArray[3].innerText === 'X') &&
                 (elsArray[4].innerText === 'X') &&
                 (elsArray[5].innerText === 'X')) ||
                 ((elsArray[6].innerText === 'X') &&
@@ -90,33 +90,33 @@ const game = (function() {
             }
             
             if(((elsArray[0].innerText === 'O') &&
-            (elsArray[1].innerText === 'O') &&
-            (elsArray[2].innerText === 'O')) ||
-            ((elsArray[3].innerText === 'O') &&
-                    (elsArray[4].innerText === 'O') &&
-                    (elsArray[5].innerText === 'O')) ||
-                    ((elsArray[6].innerText === 'O') &&
-                    (elsArray[7].innerText === 'O') &&
-                    (elsArray[8].innerText === 'O')) ||
-                    ((elsArray[0].innerText === 'O') &&
-                    (elsArray[3].innerText === 'O') &&
-                    (elsArray[6].innerText === 'O')) ||
-                    ((elsArray[1].innerText === 'O') &&
-                    (elsArray[4].innerText === 'O') &&
-                    (elsArray[7].innerText === 'O')) ||
-                    ((elsArray[2].innerText === 'O') &&
-                    (elsArray[5].innerText === 'O') &&
-                    (elsArray[8].innerText === 'O')) ||
-                    ((elsArray[0].innerText === 'O') &&
-                    (elsArray[4].innerText === 'O') &&
-                    (elsArray[8].innerText === 'O')) ||
-                    ((elsArray[2].innerText === 'O') &&
-                    (elsArray[4].innerText === 'O') &&
-                    (elsArray[6].innerText === 'O')))
-                    {display.innerHTML = `${oPlayer.name} won!`
-                    oScore += 1
-                    updateScore()
-                    roundOver = true
+                (elsArray[1].innerText === 'O') &&
+                (elsArray[2].innerText === 'O')) ||
+               ((elsArray[3].innerText === 'O') &&
+                (elsArray[4].innerText === 'O') &&
+                (elsArray[5].innerText === 'O')) ||
+                ((elsArray[6].innerText === 'O') &&
+                (elsArray[7].innerText === 'O') &&
+                (elsArray[8].innerText === 'O')) ||
+                ((elsArray[0].innerText === 'O') &&
+                (elsArray[3].innerText === 'O') &&
+                (elsArray[6].innerText === 'O')) ||
+                ((elsArray[1].innerText === 'O') &&
+                (elsArray[4].innerText === 'O') &&
+                (elsArray[7].innerText === 'O')) ||
+                ((elsArray[2].innerText === 'O') &&
+                (elsArray[5].innerText === 'O') &&
+                (elsArray[8].innerText === 'O')) ||
+                ((elsArray[0].innerText === 'O') &&
+                (elsArray[4].innerText === 'O') &&
+                (elsArray[8].innerText === 'O')) ||
+                ((elsArray[2].innerText === 'O') &&
+                (elsArray[4].innerText === 'O') &&
+                (elsArray[6].innerText === 'O')))
+                {display.innerHTML = `${oPlayer.name} won!`
+                oScore += 1
+                updateScore()
+                roundOver = true
                 }
                 
                 
@@ -158,6 +158,8 @@ const game = (function() {
         function reset() {
             startBtn.disabled = false;
             clear()
+            xScore = 0
+            oScore = 0
             xplayerTitle.innerHTML = ''
             oplayerTitle.innerHTML = ''
             xplayerScore.innerHTML = ''
